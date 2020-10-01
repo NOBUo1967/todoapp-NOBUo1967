@@ -1,0 +1,28 @@
+AllCops:
+  TargetRubyVersion: 2.6  #=>ルビーのver設定
+  DisabledByDefault: true
+  Exclude: #=>このファイルについては文法チェック不要と設定
+    - db/schema.rb
+    - vendor/bundle/**/*
+    - node_modules/**/*
+
+Bundler/OrderedGems: #gemをabc順に並び替える
+  Enabled: true
+
+Layout/EmptyLines:
+  Enabled: true
+
+Layout/TrailingEmptyLines:
+  Enabled: true
+
+Layout/TrailingWhitespace:
+  Enabled: true
+
+Style/MethodDefParentheses:
+  Enabled: true
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: single_quotes
