@@ -7,5 +7,20 @@
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+
   %body
+    %header.header
+      %P.header_pageTitle
+        Bords
+        -# link_to root_pathつける 
+      .dropdown
+
+        = image_tag 'test_avatar.png', class: 'header_avatar'
+        -# ログインしているときは画像表示、ログイン画面では画像を消す
+        .dropdown-content
+          -# login,logout機能つける
+          -# =link_to 'profile'
+          -# =link_to 'logout'
+
     = yield
