@@ -1,0 +1,19 @@
+.container
+  .all_boards All Boards
+  .board_content
+    .board_detail
+      .board_detail_title Brakets
+      -# createしたときのboard_nameを表示する
+        = board.title
+      .board_detail_actions
+        .dropdown
+          = image_tag 'dropdown-icon.png', class: 'board_dropdown'
+        -# edit,deleteができるようにする
+    .board_description Saving money - is something we would all like.
+    -# createしたときのboard_descriptionを表示
+    .borad_avatar
+      = image_tag 'test-auther-avatar.png', class: 'board_avatar'
+      -# autherのavatarを表示する
+  
+  .board_add_new
+    + Add new board
