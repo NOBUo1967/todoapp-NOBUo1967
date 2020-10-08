@@ -1,23 +1,27 @@
 @import 'variables';
 
-$avatar-size: 40px;
-
-.header{
-  display: flex;
-  justify-content: space-between;
+header{
+  
   border-bottom: 1px solid rgba(00,00,00,.1);
 }
 
-.header_pageTitle{
-  margin: 17px 30px 16px;
-  font-weight: 400;
-  font-size: 18px;
+.header{
 
-}
+  &_logos{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 22px 8px 30px;
+  }
 
-.header_avatar {
-  margin: 10px 22px 8px;
-    width: $avatar-size;
-    height: $avatar-size;
-    border-radius: 100%;
+  &_pageTitle{
+    font-weight: 400;
+    font-size: 18px;
+  }
+
+  &_avatar {
+      width: $base-avatar-size * 4/3;
+      height: $base-avatar-size * 4/3;
+      border-radius: 100%;
+  }
 }

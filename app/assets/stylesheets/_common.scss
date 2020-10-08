@@ -1,0 +1,11 @@
+@import 'variables';
+
+.dropdown{
+  position: relative;
+}
+
+.avatar{
+  height: $base-avatar-size;
+  width: $base-avatar-size;
+  border-radius: 100%;
+}

@@ -10,16 +10,16 @@
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
 
   %body
-    %header.header
-      %P.header_pageTitle
-        Boards
-        -# link_to root_pathつける 
-      .dropdown
-        = image_tag 'test-avatar.png', class: 'header_avatar'
-        -# ログインしているときは画像表示、ログイン画面では画像を消す
-        .dropdown-content
-          -# login,logout機能つける
-          -# =link_to 'profile'
-          -# =link_to 'logout'
+    %header
+      .header_logos
+        %P.header_pageTitle
+          = link_to 'Boards', root_path
+        .dropdown
+          = image_tag 'test-avatar.png', class: 'header_avatar'
+          -# ログインしているときは画像表示、ログイン画面では画像を消す
+          .dropdown_content
+            -# login,logout機能つける
+            -# =link_to 'profile'
+            -# =link_to 'logout'
 
     = yield
