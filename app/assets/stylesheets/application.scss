@@ -1,6 +1,9 @@
 @import 'board';
+@import 'common';
 @import 'header';
 @import 'variables';
+@import 'buttons';
+@import 'form';
 
 html {
   word-spacing: 1px;
@@ -23,15 +26,21 @@ body {
   height: 100%;
   background-color: $base-bg-color;
   font-size: 1em;
-  color: $text-base-color;
+  color: $base-font-color;
 }
 
-.a {
+h2{
+  font-size: 26px;
+}
+
+a {
   text-decoration: none;
-  color: $text-base-color;
+  color: $base-font-color;
 }
 
 .container {
+  width: 100%;
+  height: 90%;
   box-sizing: border-box;
-  margin: 31px 22px 0px 30px;
+  padding: 31px 22px 0px 30px;
 }
