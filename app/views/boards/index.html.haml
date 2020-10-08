@@ -1,14 +1,16 @@
 .container
-  %h2 All Boards
+  %h2.board_pageTitle All Boards
   .board_content
     .board_detail
       .board_detail_title Brakets
       -# createしたときのboard_nameを表示する
         = board.title
       .board_detail_actions
-        .dropdown
+        .dropdown.dropbtn
           = image_tag 'dropdown-icon.png', class: 'board_dropdown'
-        -# edit,deleteができるようにする
+          .dropdown_content
+            = link_to 'Edit', root_path
+            = link_to 'Delete', root_path
     .board_description Saving money - is something we would all like.
     -# createしたときのboard_descriptionを表示
     .borad_avatar

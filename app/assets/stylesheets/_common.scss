@@ -1,7 +1,38 @@
 @import 'variables';
 
-.dropdown{
+.dropbtn {
+  border: none;
+}
+
+.dropdown {
   position: relative;
+  display: inline-block;
+
+  &_content {
+    position: absolute;
+    right: 0;
+    min-width: 100px;
+    z-index: 1;
+    display: none;
+    border-radius: $base-border-radius;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+
+    a {
+      padding: 8px 14px;
+      text-decoration: none;
+      display: block;
+      color: $base-font-color;
+
+      :hover {
+        background-color: white;
+      }
+    }
+  }
+}
+
+.dropdown:hover .dropdown_content {
+  display: block;
 }
 
 .avatar{
