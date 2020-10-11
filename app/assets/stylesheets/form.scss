@@ -6,35 +6,43 @@ input, select {
     margin: 8px 0px;
     padding: 16px 24px;
     border: none;
-    border-radius: 10px;
+    border-radius: $base-border-radius;
     background-color: #dfdfdf;
   }
 }
 
 label {
+  // margin-top: 33px;
   font-size: 18px;
 }
 
 textarea {
   width: 100%;
+  height: $large-box-height;
   margin: 8px 0px;
   padding: 8px 8px;
   border: none;
-  border-radius: 10px;
+  border-radius: $base-border-radius;
   background-color: #dfdfdf;
 }
 
 .field{
-  height: 15%;
+  padding-top: 33px;
+  // height: 15%;
 }
 
 .actions{
   &_signUp{
     position: relative;
-    height: 380px;
+    height: 300px;
   }
   &_signIn{
     position: relative;
-    height: 480px;
+    height: 420px;
+  }
+
+  &_boardNew{
+    position: relative;
+    height: 300px;
   }
 }

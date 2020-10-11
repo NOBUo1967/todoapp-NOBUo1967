@@ -9,5 +9,5 @@
 #  updated_at  :datetime         not null
 #
 class Board < ApplicationRecord
-  belong_to :user
+  belongs_to :user
 end
