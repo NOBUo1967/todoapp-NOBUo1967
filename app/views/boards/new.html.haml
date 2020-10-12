@@ -1,16 +1,3 @@
 .container
   %h2 New Board
-  %ul
-    - @board.errors.full_messages.each do |message|
-      %li= message
-  = form_with(model: @board, url: boards_path, method: 'post', local: true) do |f|
-    .field
-      = f.label :name, 'Name'
-      %br/
-      = f.text_field :name, class: 'text'
-    .field
-      = f.label :description, 'Description'
-      %br/
-      = f.text_area :description
-    .actions_boardNew
-      = f.submit "submit", class: 'btn-praimary'
+  = render 'form', board: @board
