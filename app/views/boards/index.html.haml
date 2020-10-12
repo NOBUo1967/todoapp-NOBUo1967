@@ -12,10 +12,9 @@
             = image_tag 'dropdown-icon.png', class: 'board_dropdown'
             .dropdown_content
               = link_to 'Edit', edit_board_path(board)
-              = link_to 'Delete', root_path
+              = link_to 'Delete', board_path(board), data: { method: 'delete',confirm: 'Are you sure you want to delete it?' }
       .board_description
         = board.description
-      -# Saving money - is something we would all like.
       -# createしたときのboard_descriptionを表示
       .borad_avatar
         = image_tag 'test-auther-avatar.png', class: 'avatar'
