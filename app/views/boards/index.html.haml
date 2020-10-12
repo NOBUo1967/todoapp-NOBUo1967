@@ -1,6 +1,7 @@
 .container
   %h2.board_pageTitle All Boards
   - @boards.each do |board|
+    -# create_atでソートする
     .board_content
       .board_detail
         .board_detail_name
