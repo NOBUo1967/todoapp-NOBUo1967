@@ -1,22 +1,24 @@
 .container
   %h2.board_pageTitle All Boards
-  .board_content
-    .board_detail
-      .board_detail_title Brakets
-      -# createしたときのboard_nameを表示する
-        = board.title
-      .board_detail_actions
-        .dropdown.dropbtn
-          = image_tag 'dropdown-icon.png', class: 'board_dropdown'
-          .dropdown_content
-            = link_to 'Edit', root_path
-            = link_to 'Delete', root_path
-    .board_description Saving money - is something we would all like.
-    -# createしたときのboard_descriptionを表示
-    .borad_avatar
-      = image_tag 'test-auther-avatar.png', class: 'avatar'
-      -# autherのavatarを表示する
-
+  - @boards.each do |board|
+    .board_content
+      .board_detail
+        .board_detail_name
+          = board.name
+        -# createしたときのboard_nameを表示する
+        .board_detail_actions
+          .dropdown.dropbtn
+            = image_tag 'dropdown-icon.png', class: 'board_dropdown'
+            .dropdown_content
+              = link_to 'Edit', root_path
+              = link_to 'Delete', root_path
+      .board_description
+        = board.description
+      -# Saving money - is something we would all like.
+      -# createしたときのboard_descriptionを表示
+      .borad_avatar
+        = image_tag 'test-auther-avatar.png', class: 'avatar'
+        -# autherのavatarを表示する
   = link_to new_board_path do
     .board_add_new
       + Add new board
