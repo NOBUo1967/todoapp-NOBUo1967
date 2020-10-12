@@ -10,7 +10,7 @@
           .dropdown.dropbtn
             = image_tag 'dropdown-icon.png', class: 'board_dropdown'
             .dropdown_content
-              = link_to 'Edit', root_path
+              = link_to 'Edit', edit_board_path(board)
               = link_to 'Delete', root_path
       .board_description
         = board.description
