@@ -22,5 +22,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-        has_many :boards
+        has_many :boards, dependent: :destroy
+        # dependent: :destroyいる?user退会したらboard消えていい?
 end
