@@ -15,4 +15,7 @@
       -#   = f.label :remember_me
     .actions_signIn
       = f.submit "submit" , class: 'btn-praimary'
+  .field.login_label
+    %div Create an account?
+    = link_to 'Sign up', new_user_registration_path, class: 'btn-secondary'
   -# = render "devise/shared/links"

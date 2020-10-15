@@ -19,4 +19,7 @@
       = f.password_field :password_confirmation, autocomplete: "new-password", class: 'text'
     .actions_signUp
       = f.submit "submit", class: 'btn-praimary'
+  .field.login_label
+    %div Already have an account?
+    = link_to 'Sign in', new_user_session_path, class: 'btn-secondary'
   -# = render "devise/shared/links"
