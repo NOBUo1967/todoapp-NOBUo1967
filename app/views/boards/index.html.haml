@@ -7,12 +7,13 @@
         .board_detail_name
           = board.name
         -# createしたときのboard_nameを表示する
-        .board_detail_actions
-          .dropdown.dropbtn
-            = image_tag 'dropdown-icon.png', class: 'board_dropdown'
-            .dropdown_content
-              = link_to 'Edit', edit_board_path(board)
-              = link_to 'Delete', board_path(board), data: { method: 'delete',confirm: 'Are you sure you want to delete it?' }
+        - if current_user.has_written?(board)
+          .board_detail_actions
+            .dropdown.dropbtn
+              = image_tag 'dropdown-icon.png', class: 'board_dropdown'
+              .dropdown_content
+                = link_to 'Edit', edit_board_path(board)
+                = link_to 'Delete', board_path(board), data: { method: 'delete',confirm: 'Are you sure you want to delete it?' }
       .board_description
         = board.description
       -# createしたときのboard_descriptionを表示
