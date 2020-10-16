@@ -24,6 +24,7 @@ class User < ApplicationRecord
 
   has_many :boards, dependent: :destroy
   # dependent: :destroyいる?user退会したらboard消えていい?
+  has_one :profile, dependent: :destroy
 
   def has_written?(board)
     boards.exists?(id: board.id)
