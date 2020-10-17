@@ -30,4 +30,8 @@ class User < ApplicationRecord
     boards.exists?(id: board.id)
   end
 
+  def display_name
+    self.email.split('@').first
+  end
+
 end
