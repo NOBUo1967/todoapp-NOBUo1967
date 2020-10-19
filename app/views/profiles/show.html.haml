@@ -8,3 +8,6 @@
           = current_user.display_name
     .profilePage_user_actionButton
       = link_to 'Edit', edit_profile_path
+
+  - current_user.boards.each do |board|
+    = render 'commons/board', board: board
