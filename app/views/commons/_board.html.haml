@@ -14,5 +14,7 @@
     = board.description
   -# createしたときのboard_descriptionを表示
   .borad_avatar
-    = image_tag 'test-auther-avatar.png', class: 'avatar'
-    -# autherのavatarを表示する
+    = image_tag board.user.avatar_image, class: 'avatar'
+  .board_auther_name
+    - if board.user.present?
+      %p= board.user.display_name
