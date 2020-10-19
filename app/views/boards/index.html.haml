@@ -2,24 +2,7 @@
   %h2.board_pageTitle All Boards
   - @boards.each do |board|
     -# create_atでソートする
-    .board_content
-      .board_detail
-        .board_detail_name
-          = board.name
-        -# createしたときのboard_nameを表示する
-        - if current_user.has_written?(board)
-          .board_detail_actions
-            .dropdown.dropbtn
-              = image_tag 'dropdown-icon.png', class: 'board_dropdown'
-              .dropdown_content
-                = link_to 'Edit', edit_board_path(board)
-                = link_to 'Delete', board_path(board), data: { method: 'delete',confirm: 'Are you sure you want to delete it?' }
-      .board_description
-        = board.description
-      -# createしたときのboard_descriptionを表示
-      .borad_avatar
-        = image_tag 'test-auther-avatar.png', class: 'avatar'
-        -# autherのavatarを表示する
+    = render 'commons/board', board: board
   = link_to new_board_path do
     .board_add_new
       + Add new board
