@@ -13,7 +13,7 @@
     Saving money - is something we would all like.
     -# createしたときのboard_descriptionを表示
     .borad_avatar
-      = image_tag 'test-auther-avatar.png', class: 'avatar'
+      = image_tag @board.user.avatar_image
       -# autherのavatarを表示する
 
   .board_content
