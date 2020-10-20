@@ -18,5 +18,5 @@ class Board < ApplicationRecord
   validates :description, presence: true
 
   belongs_to :user
-  has_many :tasks
+  has_many :tasks, dependent: :destroy
 end
