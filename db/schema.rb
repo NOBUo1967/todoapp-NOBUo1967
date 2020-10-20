@@ -56,9 +56,9 @@ ActiveRecord::Schema.define(version: 2020_10_19_233112) do
   create_table "tasks", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "board_id", null: false
-    t.string "task_name", null: false
-    t.text "task_description", null: false
-    t.date "task_term"
+    t.string "name", null: false
+    t.text "description", null: false
+    t.date "term"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["board_id"], name: "index_tasks_on_board_id"
