@@ -44,7 +44,9 @@
   }
   
   &_avatar{
-    margin-left: 3px;
+    box-sizing: border-box;
+    padding: 16px 0px 0px 3px;
+    // margin-left: 3px;
   }
 
   &_add_new{
