@@ -12,5 +12,9 @@
       = f.label :description, 'Description'
       %br/
       = f.text_area :description
-    .actions_boardNew
+    .field
+      = f.label :term, 'Term'
+      %br/
+      = f.date_field :term
+    .actions_taskNew
       = f.submit "submit", class: 'btn-praimary'
