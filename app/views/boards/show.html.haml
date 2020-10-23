@@ -4,7 +4,7 @@
   -#task詳細が見られるようにlink_toで囲う
   .board_content
     .board_detail
-      .board_detail_name Home business advertising ideas Home business advertising ideas Home business advertising ideas Home business advertising ideas
+      .board_detail_name Home business advertising ideas
       .board_detail_actions
         .dropdown.dropbtn
           = image_tag 'dropdown-icon.png', class: 'board_dropdown'
@@ -12,11 +12,10 @@
             = link_to 'Edit', root_path
             = link_to 'Delete', root_path
     .board_description
-    Saving money - is something we would all like.
+    Saving money - is something we would all like. Home business advertising ideas Home business advertising ideas Home business advertising ideas
     .board_avatar
       = image_tag @board.user.avatar_image, class: 'avatar'
 
-  = link_to new_board_path do
-    -#new_board_task_pathにpathを変える
+  = link_to new_board_task_path(@board) do
     .board_add_new
       + Add new card
