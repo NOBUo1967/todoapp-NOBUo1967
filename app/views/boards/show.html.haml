@@ -1,20 +1,21 @@
 .container
   %h2.board_pageTitle= @board.name
-  -#each doして表示する
   -#task詳細が見られるようにlink_toで囲う
-  .board_content
-    .board_detail
-      .board_detail_name Home business advertising ideas
-      .board_detail_actions
-        .dropdown.dropbtn
-          = image_tag 'dropdown-icon.png', class: 'board_dropdown'
-          .dropdown_content
-            = link_to 'Edit', root_path
-            = link_to 'Delete', root_path
-    .board_description
-    Saving money - is something we would all like. Home business advertising ideas Home business advertising ideas Home business advertising ideas
-    .board_avatar
+  - @tasks.each do |task|
+    .board_content
+      -if task.eyecatch.attached?
+        .board_image
+          = image_tag task.eyecatch
+      .board_detail
+        .board_detail_name
+          = task.name
+      .board_description
+        = task.description
+      .board_avatar
       = image_tag @board.user.avatar_image, class: 'avatar'
+      .board_auther_name
+        - if @board.user.present?
+          %p= @board.user.display_name
 
   = link_to new_board_task_path(@board) do
     .board_add_new

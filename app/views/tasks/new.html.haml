@@ -5,6 +5,10 @@
     %li= message
   = form_with(model: @task, url: board_tasks_path(@task.board), local: true) do |f|
     .field
+      = f.label :eyecatch, 'Eyecatch'
+      %br/
+      = f.file_field :eyecatch
+    .field
       = f.label :name, 'Name'
       %br/
       = f.text_field :name, class: 'text'
