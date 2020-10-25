@@ -1,6 +1,5 @@
 .container
   %h2.board_pageTitle= @board.name
-  -#task詳細が見られるようにlink_toで囲う
   - @tasks.each do |task|
     .board_content
       -if task.eyecatch.attached?
