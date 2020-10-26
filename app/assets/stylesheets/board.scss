@@ -36,6 +36,20 @@
     }
   }
 
+  &_task{
+    margin-bottom: 12px;
+
+    &_name{
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    &_term{
+      font-size: 12px;
+    }
+    
+  }
+
   &_description{
     margin-bottom: 29px;
     line-height: 19px;

@@ -5,9 +5,11 @@
       -if task.eyecatch.attached?
         .board_image
           = image_tag task.eyecatch
-      .board_detail
-        .board_detail_name
+      .board_task
+        .board_task_name
           = task.name
+        .board_task_term
+          term #{task.term}
       .board_description
         = task.description
       .board_avatar
@@ -15,6 +17,7 @@
       .board_auther_name
         - if @board.user.present?
           %p= @board.user.display_name
+      .board_comment_count
 
   = link_to new_board_task_path(@board) do
     .board_add_new
