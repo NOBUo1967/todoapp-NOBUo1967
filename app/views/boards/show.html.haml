@@ -12,12 +12,16 @@
           term #{task.term}
       .board_description
         = task.description
-      .board_avatar
-      = image_tag @board.user.avatar_image, class: 'avatar'
+      .board_detail
+        .board_avatar
+        = image_tag @board.user.avatar_image, class: 'avatar'
+        .board_detail_comment 
+          %span 22
+          -# コメント数を取得して表示する
+          =image_tag 'comment-count.svg'
       .board_auther_name
         - if @board.user.present?
           %p= @board.user.display_name
-      .board_comment_count
 
   = link_to new_board_task_path(@board) do
     .board_add_new
