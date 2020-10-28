@@ -3,7 +3,6 @@
     .board_detail
       .board_detail_name
         = board.name
-      -# createしたときのboard_nameを表示する
       - if current_user.has_written?(board)
         .board_detail_actions
           .dropdown.dropbtn
@@ -13,8 +12,7 @@
               = link_to 'Delete', board_path(board), data: { method: 'delete',confirm: 'Are you sure you want to delete it?' }
     .board_description
       = board.description
-    -# createしたときのboard_descriptionを表示
-    .borad_avatar
+    .board_avatar
       = image_tag board.user.avatar_image, class: 'avatar'
     .board_auther_name
       - if board.user.present?

@@ -34,6 +34,34 @@
         cursor: pointer;
       }
     }
+
+    &_comment{
+      position: absolute;
+      right: 14px;
+      font-size: 12px;
+      
+      img{
+        vertical-align: middle;
+      }
+
+      span{
+        vertical-align: middle;
+      }
+    }
+  }
+
+  &_task{
+    margin-bottom: 12px;
+
+    &_name{
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    &_term{
+      font-size: 12px;
+    }
+    
   }
 
   &_description{
@@ -44,7 +72,26 @@
   }
   
   &_avatar{
-    margin-left: 3px;
+    box-sizing: border-box;
+    padding: 16px 0px 0px 3px;
+    // margin-left: 3px;
+  }
+
+  &_image {
+    height: 170px;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%
+    }
   }
 
   &_add_new{

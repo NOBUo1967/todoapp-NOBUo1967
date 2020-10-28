@@ -17,9 +17,12 @@
 #  index_tasks_on_user_id   (user_id)
 #
 class Task < ApplicationRecord
+  has_one_attached :eyecatch
+
   validates :name, presence: true
   validates :description, presence: true
 
   belongs_to :board
   belongs_to :user
+
 end

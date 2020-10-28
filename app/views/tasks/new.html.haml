@@ -1,1 +1,24 @@
-%div new
+.container
+  %h2 New Card
+  %ul
+  - @task.errors.full_messages.each do |message|
+    %li= message
+  = form_with(model: @task, url: board_tasks_path(@task.board), local: true) do |f|
+    .field
+      = f.label :eyecatch, 'Eyecatch'
+      %br/
+      = f.file_field :eyecatch
+    .field
+      = f.label :name, 'Name'
+      %br/
+      = f.text_field :name, class: 'text'
+    .field
+      = f.label :description, 'Description'
+      %br/
+      = f.text_area :description
+    .field
+      = f.label :term, 'Term'
+      %br/
+      = f.date_field :term
+    .actions_taskNew
+      = f.submit "submit", class: 'btn-praimary'

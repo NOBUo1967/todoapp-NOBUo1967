@@ -19,4 +19,7 @@ class Board < ApplicationRecord
 
   belongs_to :user
   has_many :tasks, dependent: :destroy
+
+  delegate :term, to: :task, allow_nil: true
+
 end
