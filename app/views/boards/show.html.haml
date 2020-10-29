@@ -1,29 +1,29 @@
 .container
-  %h2.board_pageTitle= @board.name
+  %h2.card_board_pageTitle= @board.name
   - @tasks.each do |task|
     = link_to board_task_path(@board,task) do
-      .board_content
+      .card_content
         -if task.eyecatch.attached?
-          .board_image
+          .card_image
             = image_tag task.eyecatch
-        .board_task
-          .board_task_name
+        .card_task
+          .card_task_name
             = task.name
-          .board_task_term
+          .card_task_term
             term #{task.term}
-        .board_description
+        .card_description
           = task.description
-        .board_detail
-          .board_avatar
+        .card_detail
+          .card_avatar
           = image_tag @board.user.avatar_image, class: 'avatar'
-          .board_detail_comment 
+          .card_detail_comment 
             %span 22
             -# コメント数を取得して表示する
             =image_tag 'comment-count.svg'
-        .board_auther_name
+        .card_auther_name
           - if @board.user.present?
             %p= @board.user.display_name
 
   = link_to new_board_task_path(@board) do
-    .board_add_new
+    .card_add_new
       + Add new card

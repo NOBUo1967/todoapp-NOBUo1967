@@ -1,11 +1,7 @@
 @import 'variables';
 
+.card{
 
-.board_pageTitle{
-  margin-bottom: 35px;
-}
-
-.board{
   &_content{
     min-height: $large-box-height;
     padding: 32px 16px 20px 17px;
@@ -50,20 +46,6 @@
     }
   }
 
-  &_task{
-    margin-bottom: 12px;
-
-    &_name{
-      font-size: 18px;
-      margin-bottom: 6px;
-    }
-
-    &_term{
-      font-size: 12px;
-    }
-    
-  }
-
   &_description{
     margin-bottom: 29px;
     line-height: 19px;
@@ -102,4 +84,24 @@
     line-height: 160px;
     font-size: 18px;
   }
+
+  &_board{
+    &_pageTitle{
+      margin-bottom: 35px;
+    }
+  }
+
+  &_task{
+    margin-bottom: 12px;
+
+    &_name{
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    &_term{
+      font-size: 12px;
+    }
+  }
+
 }

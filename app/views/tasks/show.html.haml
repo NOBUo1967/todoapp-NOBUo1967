@@ -1,9 +1,8 @@
 .container
-
-  .board_detail
-    %h2.board_pageTitle= @task.name
+  .card_detail
+    %h2.card_task_pageTitle= @task.name.truncate(15)
     -if current_user.has_written?(@task)
-      .board_detail_actions
+      .card_detail_actions
         .dropdown.dropbtn
           = image_tag 'dropdown-icon.png', class: 'board_dropdown'
           .dropdown_content
@@ -12,5 +11,5 @@
             = link_to 'Delete', root_path
             -# board_path(board), data: { method: 'delete',confirm: 'Are you sure you want to delete it?' }
   -if @task.eyecatch.attached?
-    .board_image
+    .card_image
       = image_tag @task.eyecatch
