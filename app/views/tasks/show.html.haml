@@ -1,7 +1,7 @@
 .container
   .card_detail
     %h2.card_task_pageTitle= @task.name.truncate(15)
-    -if current_user.has_written?(@task)
+    -if current_user.has_written_task?(@task)
       .card_detail_actions
         .dropdown.dropbtn
           = image_tag 'dropdown-icon.png', class: 'board_dropdown'

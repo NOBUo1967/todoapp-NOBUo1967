@@ -15,14 +15,14 @@
           = task.description
         .card_detail
           .card_avatar
-          = image_tag @board.user.avatar_image, class: 'avatar'
+          = image_tag task.user.avatar_image, class: 'avatar'
           .card_detail_comment 
             %span 22
             -# コメント数を取得して表示する
             =image_tag 'comment-count.svg'
         .card_auther_name
-          - if @board.user.present?
-            %p= @board.user.display_name
+          - if task.user.present?
+            %p= task.user.display_name
 
   = link_to new_board_task_path(@board) do
     .card_add_new
