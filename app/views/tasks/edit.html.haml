@@ -1,9 +1,9 @@
 .container
-  %h2 New Card
+  %h2 Edit Card
   %ul
   - @task.errors.full_messages.each do |message|
     %li= message
-  = form_with(model: @task, url: board_tasks_path(@task.board), method: 'post', local: true) do |f|
+  = form_with(model: @task, url: board_task_path(@board, @task), method: 'put', local: true) do |f|
     .field
       = f.label :eyecatch, 'Eyecatch'
       %br/

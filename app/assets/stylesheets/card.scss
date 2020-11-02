@@ -1,11 +1,7 @@
 @import 'variables';
 
-
-.board_pageTitle{
-  margin-bottom: 35px;
-}
-
-.board{
+.card{
+  //font-size 14pxのところはbase-font-sizeにする
   &_content{
     min-height: $large-box-height;
     padding: 32px 16px 20px 17px;
@@ -35,10 +31,9 @@
       }
     }
 
-    &_comment{
+    &_commentIcon{
       position: absolute;
       right: 14px;
-      font-size: 12px;
       
       img{
         vertical-align: middle;
@@ -46,41 +41,31 @@
 
       span{
         vertical-align: middle;
+        font-size: 12px;
       }
     }
-  }
-
-  &_task{
-    margin-bottom: 12px;
-
-    &_name{
-      font-size: 18px;
-      margin-bottom: 6px;
-    }
-
-    &_term{
-      font-size: 12px;
-    }
-    
   }
 
   &_description{
     margin-bottom: 29px;
     line-height: 19px;
-    opacity: .4;
     font-size: 14px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    opacity: .4;
   }
   
   &_avatar{
     box-sizing: border-box;
     padding: 16px 0px 0px 3px;
-    // margin-left: 3px;
   }
 
   &_image {
     height: 170px;
     position: relative;
     overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 27px;
 
     img {
       position: absolute;
@@ -101,5 +86,70 @@
     text-align: center;
     line-height: 160px;
     font-size: 18px;
+
+    &_comment{
+      height: 57px;
+      border: 1px dashed rgba(00,00,00,.2);
+      border-radius: $base-border-radius;
+      text-align: center;
+      line-height: 57px;
+      font-size: 14px;
+    }
+  }
+
+  &_board{
+    &_pageTitle{
+      margin-bottom: 21px;
+    }
+  }
+
+  &_task{
+    margin-bottom: 12px;
+
+    &_name{
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    &_term{
+      font-size: 12px;
+    }
+
+    &_content{
+      min-height: $large-box-height;
+      padding: 20px 15px;
+      margin-bottom: 26px;
+      border-radius: $base-border-radius;
+      background-color: #dfdfdf;
+    }
+
+    &_description{
+      line-height: 19px;
+      font-size: 14px;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
+
+    &_comment{
+      &_title{
+        margin-bottom: 25px;
+        font-size: 26px;
+      }
+
+      &_detail{
+        display: flex;
+        margin-bottom: 32px;
+      }
+
+      &_avatar{
+        margin: 8px 0;
+        width: $base-avatar-size * 4/3;
+        height: $base-avatar-size * 4/3;
+      }
+
+      &_description{
+        padding: 0 8px 0 16px;
+      }
+    }
   }
 }
