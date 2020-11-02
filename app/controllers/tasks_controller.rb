@@ -3,7 +3,7 @@ class TasksController < ApplicationController
 
   def show
     @board = Board.find(params[:board_id])
-    @task = @board.tasks.find(params[:id])
+    @task = Task.find(params[:id])
   end
 
   def new
@@ -23,13 +23,13 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @board = current_user.boards.find(params[:board_id])
-    @task = @board.tasks.find(params[:id])
+    @board = Board.find(params[:board_id])
+    @task = current_user.tasks.find(params[:id])
   end
 
   def update
-    @board = current_user.boards.find(params[:board_id])
-    @task = @board.tasks.find(params[:id])
+    @board = Board.find(params[:board_id])
+    @task = current_user.tasks.find(params[:id])
     if @task.update(task_params)
       redirect_to board_task_path(@board, @task), notice: 'Update the task'
     else
@@ -39,10 +39,10 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    board = current_user.boards.find(params[:id])
-    @task = board.tasks.find(params[:id])
-    @task.destroy!
-    redirect_to root_path, notice: 'Board has been successfully deleted.'
+    board = Board.find(params[:board_id])
+    task = current_user.tasks.find(params[:id])
+    task.destroy!
+    redirect_to board_path(board), notice: 'Board has been successfully deleted.'
   end
 
 
