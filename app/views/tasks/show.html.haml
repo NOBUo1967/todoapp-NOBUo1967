@@ -28,6 +28,7 @@
         = image_tag 'test-auther-avatar.png', class: 'card_task_comment_avatar'
       .card_task_comment_description
         くぁｗせｄｒｆｔｇｙふじこｌｐくぁｗせｄｒｆｔｇｙふじこｌｐくぁｗせｄｒｆｔｇｙふじこｌｐ
-  -# = link_to new_board_task_path(@board) do
-  .card_add_new_comment
-    + Add new comment
+
+  = link_to new_board_task_comment_path(@board, @task) do
+    .card_add_new_comment
+      + Add new comment
