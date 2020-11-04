@@ -18,16 +18,13 @@
   .card_task_comment
     .card_task_comment_title
       %p Comment
-    .card_task_comment_detail
-      .card_task_comment_avatar
-        = image_tag 'test-avatar.png', class: 'card_task_comment_avatar'
-      .card_task_comment_description
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    .card_task_comment_detail
-      .card_task_comment_avatar
-        = image_tag 'test-auther-avatar.png', class: 'card_task_comment_avatar'
-      .card_task_comment_description
-        くぁｗせｄｒｆｔｇｙふじこｌｐくぁｗせｄｒｆｔｇｙふじこｌｐくぁｗせｄｒｆｔｇｙふじこｌｐ
-  -# = link_to new_board_task_path(@board) do
-  .card_add_new_comment
-    + Add new comment
+    - @comments.each do |comment|
+      .card_task_comment_detail
+        .card_task_comment_avatar
+          = image_tag comment.user.avatar_image, class: 'card_task_comment_avatar'
+        .card_task_comment_content
+          = comment.content
+
+  = link_to new_board_task_comment_path(@board, @task) do
+    .card_add_new_comment
+      + Add new comment
