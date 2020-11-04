@@ -1,4 +1,6 @@
 .container
+  .pageBack
+    = link_to '<< back', board_path(@board)
   .card_detail
     %h2.card_task_pageTitle= @task.name.truncate(13)
     -if current_user.has_written_task?(@task)
