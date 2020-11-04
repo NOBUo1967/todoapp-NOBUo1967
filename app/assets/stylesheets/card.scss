@@ -41,7 +41,7 @@
 
       span{
         vertical-align: middle;
-        font-size: 12px;
+        font-size: $small-font-size;
       }
     }
   }
@@ -49,7 +49,7 @@
   &_description{
     margin-bottom: 29px;
     line-height: 19px;
-    font-size: 14px;
+    font-size: $medium-font-size;
     overflow-wrap: break-word;
     word-wrap: break-word;
     opacity: .4;
@@ -97,7 +97,7 @@
       border-radius: $base-border-radius;
       text-align: center;
       line-height: 57px;
-      font-size: 14px;
+      font-size: $medium-font-size;
     }
   }
 
@@ -116,7 +116,7 @@
     }
 
     &_term{
-      font-size: 12px;
+      font-size: $small-font-size;
     }
 
     &_content{
@@ -129,7 +129,7 @@
 
     &_description{
       line-height: 19px;
-      font-size: 14px;
+      font-size: $medium-font-size;
       overflow-wrap: break-word;
       word-wrap: break-word;
     }
@@ -137,7 +137,7 @@
     &_comment{
       &_title{
         margin-bottom: 25px;
-        font-size: 26px;
+        font-size: $large-font-size;
       }
 
       &_detail{
